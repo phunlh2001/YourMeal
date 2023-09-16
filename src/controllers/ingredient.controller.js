@@ -6,7 +6,7 @@ class IngredientController {
       const ingredients = await ingredientServices.getAll();
 
       const transData = ingredients.map((ingredient) => ({
-        id: ingredient._id,
+        id: ingredient.id,
         name: ingredient.name,
         calories: ingredient.cal,
         image: ingredient.link_img,
@@ -33,7 +33,7 @@ class IngredientController {
       const { name } = req.body;
       const ingredients = await ingredientServices.getAllByName(name);
       const data = ingredients.map((ingredient) => ({
-        id: ingredient._id,
+        id: ingredient.id,
         name: ingredient.name,
         calories: ingredient.cal,
         image: ingredient.link_img,
