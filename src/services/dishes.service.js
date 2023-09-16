@@ -1,4 +1,4 @@
-import DishModel from "../model/dishes.model.js";
+import DishModel from "../models/dishes.model.js";
 
 async function getAll() {
   const dishes = await DishModel.find({});

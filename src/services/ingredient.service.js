@@ -1,4 +1,4 @@
-import IngredientModel from "../model/ingredient.model.js";
+import IngredientModel from "../models/ingredient.model.js";
 
 async function getAll() {
   const ingredients = await IngredientModel.find({});
