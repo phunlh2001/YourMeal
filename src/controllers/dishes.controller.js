@@ -12,7 +12,7 @@ class DishController {
 
   async getDishById(req, res) {
     try {
-      const { id } = req.body;
+      const { id } = req.params;
       const data = await dishServices.getById(id);
       return res.status(200).json({ data: data });
     } catch (error) {
@@ -22,7 +22,7 @@ class DishController {
 
   async getDishByName(req, res) {
     try {
-      const { name } = req.body;
+      const { name } = req.params;
       const data = await dishServices.getOneByName(name);
       return res.status(200).json({ data: data });
     } catch (error) {
@@ -32,7 +32,7 @@ class DishController {
 
   async getAllByName(req, res) {
     try {
-      const { name } = req.body;
+      const { name } = req.params;
       const data = await dishServices.getAllByName(name);
       return res.status(200).json({ data: data });
     } catch (error) {

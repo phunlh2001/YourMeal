@@ -12,7 +12,7 @@ class IngredientController {
 
   async getIngredientById(req, res) {
     try {
-      const { id } = req.body;
+      const { id } = req.params;
       const data = await ingredientServices.getById(id);
       return res.status(200).json({ data: data });
     } catch (error) {
@@ -22,7 +22,7 @@ class IngredientController {
 
   async getIngredientsByName(req, res) {
     try {
-      const { name } = req.body;
+      const { name } = req.params;
       const data = await ingredientServices.getAllByName(name);
       return res.status(200).json({ data: data });
     } catch (error) {
