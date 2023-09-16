@@ -3,16 +3,8 @@ import ingredientServices from "../services/ingredient.service.js";
 class IngredientController {
   async getIngredients(req, res) {
     try {
-      const ingredients = await ingredientServices.getAll();
-
-      const transData = ingredients.map((ingredient) => ({
-        id: ingredient.id,
-        name: ingredient.name,
-        calories: ingredient.cal,
-        image: ingredient.link_img,
-      }));
-
-      return res.status(200).json({ data: transData });
+      const data = await ingredientServices.getAll();
+      return res.status(200).json({ data: data });
     } catch (error) {
       return res.status(404).json({ message: error.message });
     }
@@ -21,13 +13,7 @@ class IngredientController {
   async getIngredientById(req, res) {
     try {
       const { id } = req.body;
-      const ingredient = await ingredientServices.getById(id);
-      const data = {
-        id: ingredient.id,
-        name: ingredient.name,
-        calories: ingredient.cal,
-        image: ingredient.link_img,
-      };
+      const data = await ingredientServices.getById(id);
       return res.status(200).json({ data: data });
     } catch (error) {
       return res.status(404).json({ message: error.message });
@@ -37,14 +23,7 @@ class IngredientController {
   async getIngredientsByName(req, res) {
     try {
       const { name } = req.body;
-      const ingredients = await ingredientServices.getAllByName(name);
-      const data = ingredients.map((ingredient) => ({
-        id: ingredient.id,
-        name: ingredient.name,
-        calories: ingredient.cal,
-        image: ingredient.link_img,
-      }));
-
+      const data = await ingredientServices.getAllByName(name);
       return res.status(200).json({ data: data });
     } catch (error) {
       return res.status(404).json({ message: error.message });
