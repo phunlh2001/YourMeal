@@ -24,7 +24,15 @@ class DishController {
     try {
       const { id } = req.body;
       const dish = await dishServices.getById(id);
-      return res.status(200).json({ data: dish });
+      const data = {
+        id: dish._id,
+        name: dish.name,
+        calories: dish.cal,
+        ingredients: dish.ingredients,
+        recipe: dish.cook,
+        image: dish.link_img,
+      };
+      return res.status(200).json({ data: data });
     } catch (error) {
       return res.status(404).json({ message: error.message });
     }
@@ -34,7 +42,15 @@ class DishController {
     try {
       const { name } = req.body;
       const dish = await dishServices.getOneByName(name);
-      return res.status(200).json({ data: dish });
+      const data = {
+        id: dish._id,
+        name: dish.name,
+        calories: dish.cal,
+        ingredients: dish.ingredients,
+        recipe: dish.cook,
+        image: dish.link_img,
+      };
+      return res.status(200).json({ data: data });
     } catch (error) {
       return res.status(404).json({ message: error.message });
     }
