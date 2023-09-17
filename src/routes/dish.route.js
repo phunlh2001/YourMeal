@@ -1,12 +1,12 @@
 import { Router } from "express";
 import DishController from "../controllers/dishes.controller.js";
 
-const router = Router();
+const dishRouter = Router();
 const dish = new DishController();
 
-router.get("/", dish.getDishes);
-router.get("/:id", dish.getDishById);
-router.get("/:name", dish.getAllByName);
-router.get("/getOne/:name", dish.getDishByName);
+dishRouter.get("/", dish.getDishes);
+dishRouter.get("/:id", dish.getDishById);
+dishRouter.get("/:name", dish.getAllByName);
+dishRouter.get("/getOne/:name", dish.getDishByName);
 
-export { router };
+export default dishRouter;
