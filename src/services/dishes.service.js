@@ -31,7 +31,7 @@ async function getById(id) {
 }
 
 async function getOneByName(name) {
-  const found = await DishModel.findOne({ name: name }).exact();
+  const found = await DishModel.findOne({ name }).exact();
   if (!found) throw "Not found dish";
 
   const dish = {
@@ -46,7 +46,7 @@ async function getOneByName(name) {
 }
 
 async function getAllByName(name) {
-  const found = await DishModel.find({ name: name }).exact();
+  const found = await DishModel.find({ name }).exact();
   if (!found) throw "Not found dish";
 
   const dishes = found.map((dish) => ({

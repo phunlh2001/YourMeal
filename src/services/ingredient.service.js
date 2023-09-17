@@ -28,7 +28,7 @@ async function getById(id) {
 }
 
 async function getAllByName(name) {
-  const found = await IngredientModel.find({ name: name }).exact();
+  const found = await IngredientModel.find({ name }).exact();
   if (!found) throw "Not found ingredient";
 
   const ingredients = found.map((ingredient) => ({
