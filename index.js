@@ -4,6 +4,7 @@ import morgan from "morgan";
 import { dbConnector } from "./src/database/connector.js";
 import * as ingredientRouter from "./src/routes/ingredient.route.js";
 import * as dishRouter from "./src/routes/dish.route.js";
+import errorHandler from "./src/middlewares/handle-error.js";
 
 dbConnector();
 const app = express();
@@ -17,6 +18,11 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
+
+// middleware error handler
+app.use((err, req, res, next) => {
+  errorHandler(err, req, res, next)
+})
 
 // routers
 app.use("/api/dishes", dishRouter);
