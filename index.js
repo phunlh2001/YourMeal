@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { dbConnector } from "./src/database/connector.js";
-import * as ingredientRouter from "./src/routes/ingredient.route.js";
-import * as dishRouter from "./src/routes/dish.route.js";
+import ingredientRouter from "./src/routes/ingredient.route.js";
+import dishRouter from "./src/routes/dish.route.js";
 import errorHandler from "./src/middlewares/handle-error.js";
 
 dbConnector();
