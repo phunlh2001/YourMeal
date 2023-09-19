@@ -1,6 +1,6 @@
 {
-  "name": "YourMeal",
-  "description": "Transfrom YourMeal python version to Nodejs",
+  "name": "your-meal-api",
+  "description": "Transform YourMeal API from Python to Nodejs",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

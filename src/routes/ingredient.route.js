@@ -5,7 +5,7 @@ const ingredientRouter = Router();
 const ingredient = new IngredientController();
 
 ingredientRouter.get("/", ingredient.getIngredients);
-ingredientRouter.get("/:id", ingredient.getIngredientById);
-ingredientRouter.get("/:name", ingredient.getIngredientsByName);
+ingredientRouter.get("/id/:id", ingredient.getIngredientById);
+ingredientRouter.get("/name/:name", ingredient.getIngredientsByName);
 
 export default ingredientRouter;

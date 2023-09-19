@@ -9,11 +9,12 @@ services:
       - data:/data/:rw
       - ./database/initdb.js:/docker-entrypoint-initdb.d/initdb.js:ro
     environment:
-      MONGO_INITDB_DATABASE: yourMeal
+      MONGO_INITDB_DATABASE: YourMeal
 
   ## consider remove/re-config in production
   mongo_express:
     image: mongo-express
+    restart: always
     depends_on:
       - mongodb
     ports:

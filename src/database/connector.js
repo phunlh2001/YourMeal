@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const uri = "mongodb://mongodb/YourMeal";
+const uri = "mongodb://localhost/YourMeal";
 
 export const dbConnector = async () => {
   try {

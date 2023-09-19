@@ -9,8 +9,9 @@ async function getAll() {
     name: dish.name,
     calories: dish.cal,
     ingredients: dish.ingredients,
-    recipe: dish.cook,
-    image: dish.link_img,
+    prepare_steps: dish.prepare_steps,
+    cook_steps: dish.cook_steps,
+    link_img: dish.link_img,
   }));
   return transDishes;
 }
@@ -24,8 +25,9 @@ async function getById(id) {
     name: found.name,
     calories: found.cal,
     ingredients: found.ingredients,
-    recipe: found.cook,
-    image: found.link_img,
+    prepare_steps: found.prepare_steps,
+    cook_steps: found.cook_steps,
+    link_img: found.link_img,
   };
   return dish;
 }
@@ -39,8 +41,9 @@ async function getOneByName(name) {
     name: found.name,
     calories: found.cal,
     ingredients: found.ingredients,
-    recipe: found.cook,
-    image: found.link_img,
+    prepare_steps: found.prepare_steps,
+    cook_steps: found.cook_steps,
+    link_img: found.link_img,
   };
   return dish;
 }
@@ -54,8 +57,9 @@ async function getAllByName(name) {
     name: dish.name,
     calories: dish.cal,
     ingredients: dish.ingredients,
-    recipe: dish.cook,
-    image: dish.link_img,
+    prepare_steps: dish.prepare_steps,
+    cook_steps: dish.cook_steps,
+    link_img: dish.link_img,
   }));
   return dishes;
 }
