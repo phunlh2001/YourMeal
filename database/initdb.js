@@ -7,7 +7,7 @@ db.createCollection("ingredients");
 
 // add some sample data Dishes
 // the sample data will not be used in production
-db.Dishes.insertMany([
+db.dishes.insertMany([
   {
     name: "Chorizo and mozzarella gnocchi bake",
     cal: 318,
@@ -739,7 +739,7 @@ db.Dishes.insertMany([
 ]);
 
 // add some sample data
-db.Ingredients.insertMany([
+db.ingredients.insertMany([
   {
     id: 1,
     name: "chicken egg",
