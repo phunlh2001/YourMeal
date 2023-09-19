@@ -3,9 +3,9 @@ const { Schema } = mongoose;
 
 const schema = new Schema({
   id: { type: Number },
-  name: { type: String, default: "" },
-  cal: { type: Number, default: 0 },
-  link_img: { type: String, default: "" },
+  name: { type: String, required: true },
+  cal: { type: Number, required: true },
+  link_img: { type: String, required: true },
 });
 
 const IngredientModel = mongoose.model("Ingredients", schema);

@@ -2,11 +2,12 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const schema = new Schema({
-  name: { type: String, default: "" },
-  cal: { type: Number, default: 0 },
-  ingredients: { type: Array, default: [] },
-  cook: { type: String, default: "" },
-  link_img: { type: String, default: "" },
+  name: { type: String, required: true },
+  cal: { type: Number, required: true },
+  ingredients: { type: Array, required: true },
+  prepare_steps: { type: Array, required: true },
+  cook_steps: { type: Array, required: true },
+  link_img: { type: String, required: true },
 });
 
 const DishModel = mongoose.model("Dishes", schema);
