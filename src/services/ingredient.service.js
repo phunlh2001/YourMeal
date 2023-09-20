@@ -2,7 +2,7 @@ import IngredientModel from "../models/ingredient.model.js";
 
 async function getAll() {
   const ingredients = await IngredientModel.find({});
-  if (!ingredients || ingredients.length === 0) throw "Ingredients empty!";
+  if (!ingredients || ingredients.length === 0) throw new Error("Ingredients empty!");
 
   const transData = ingredients.map((ingredient) => ({
     id: ingredient.id,
@@ -16,7 +16,7 @@ async function getAll() {
 
 async function getById(id) {
   const found = await IngredientModel.findById(id);
-  if (!found) throw "Ingredient not found";
+  if (!found) throw new Error("Ingredient not found");
 
   const ingredient = {
     id: found.id,
@@ -29,7 +29,7 @@ async function getById(id) {
 
 async function getAllByName(name) {
   const found = await IngredientModel.find({ name });
-  if (!found || found.length === 0) throw "Ingredient not found";
+  if (!found || found.length === 0) throw new Error("Ingredient not found");
 
   const ingredients = found.map((ingredient) => ({
     id: ingredient.id,
