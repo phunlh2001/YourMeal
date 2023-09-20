@@ -34,7 +34,7 @@ async function getById(id) {
 
 async function getOneByName(name) {
   const found = await DishModel.findOne({ name });
-  if (!found || found.length === 0) throw new Error("Dish not found");
+  if (!found) throw new Error("Dish not found");
 
   const dish = {
     id: found._id,
@@ -50,7 +50,7 @@ async function getOneByName(name) {
 
 async function getAllByName(name) {
   const found = await DishModel.find({ name });
-  if (!found) throw new Error("Dish not found");
+  if (!found || found.length === 0) throw new Error("Dish not found");
 
   const dishes = found.map((dish) => ({
     id: dish._id,
